@@ -38,7 +38,7 @@ def run2():
 			s.close()
 			print("-> Error:(")
 
-for 1 in range(threads):
+for y in range(threads):
 	if choice == '1':
 		th = threading.Thread(target = run)
 		th.start()
